@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class DisLikeActivity extends AppCompatActivity {
+public class FilterSearchActivity extends AppCompatActivity {
 
     Button btnCommunity;
     Button btnHome;
@@ -18,7 +18,7 @@ public class DisLikeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dis_like);
+        setContentView(R.layout.activity_filter_search);
 
         btnCommunity = findViewById(R.id.btnCommunity);
         btnHome = findViewById(R.id.btnHome);
@@ -30,7 +30,7 @@ public class DisLikeActivity extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,MainActivity.class);
+                Intent intent = new Intent(FilterSearchActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -40,18 +40,18 @@ public class DisLikeActivity extends AppCompatActivity {
         btnCommunity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,CommunityActivity.class);
+                Intent intent = new Intent(FilterSearchActivity.this,CommunityActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
 
-        // 필터검색 액티비티 넘어가기
-        btnFilter.setOnClickListener(new View.OnClickListener() {
+        // 내 정보 액티비티 넘어가기
+        btnMy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,FilterSearchActivity.class);
+                Intent intent = new Intent(FilterSearchActivity.this,MyMenuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -61,17 +61,7 @@ public class DisLikeActivity extends AppCompatActivity {
         btnParty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,PartyActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        // 내정보 액티비티 넘어가기
-        btnMy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,MyMenuActivity.class);
+                Intent intent = new Intent(FilterSearchActivity.this,PartyActivity.class);
                 startActivity(intent);
                 finish();
             }

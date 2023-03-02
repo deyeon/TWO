@@ -2,12 +2,13 @@ package com.example.two;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class DisLikeActivity extends AppCompatActivity {
+public class PartyActivity extends AppCompatActivity {
 
     Button btnCommunity;
     Button btnHome;
@@ -15,10 +16,11 @@ public class DisLikeActivity extends AppCompatActivity {
     Button btnParty;
     Button btnMy;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dis_like);
+        setContentView(R.layout.activity_party);
 
         btnCommunity = findViewById(R.id.btnCommunity);
         btnHome = findViewById(R.id.btnHome);
@@ -30,7 +32,7 @@ public class DisLikeActivity extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,MainActivity.class);
+                Intent intent = new Intent(PartyActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -40,7 +42,7 @@ public class DisLikeActivity extends AppCompatActivity {
         btnCommunity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,CommunityActivity.class);
+                Intent intent = new Intent(PartyActivity.this,CommunityActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -51,30 +53,21 @@ public class DisLikeActivity extends AppCompatActivity {
         btnFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,FilterSearchActivity.class);
+                Intent intent = new Intent(PartyActivity.this,FilterSearchActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        // 파티매칭 액티비티 넘어가기
-        btnParty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,PartyActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        // 내정보 액티비티 넘어가기
+        // 내 정보 액티비티 넘어가기
         btnMy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisLikeActivity.this,MyMenuActivity.class);
+                Intent intent = new Intent(PartyActivity.this,MyMenuActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+
     }
 }
